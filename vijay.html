@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Balloon Pop Game</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .sky {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: fixed;
+    }
+
+    .containerbody {
+      position: fixed;
+      right: 10%;
+      bottom: 15%;
+      object-fit: inherit;
+    }
+
+    .pumpbody.blow {
+      height: 130px;
+      width: 165px;
+    }
+
+    .pumptop.blow {
+      height: 20px;
+    }
+
+    .pumpside.blow {
+      height: 130px;
+    }
+
+    .pumpbody {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 150px;
+      width: 160px;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      transition: height 1s, width 1s;
+    }
+
+    .pumptop {
+      position: absolute;
+      height: 125px;
+      width: 100px;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -122%);
+      transition: height 1s;
+    }
+
+    .pumpside {
+      position: absolute;
+      top: 50%;
+      left: -3px;
+      height: 143px;
+      width: 150px;
+      transform: translate(-109%, -58%);
+      transition: height 1s;
+    }
+
+    .containerbodybaloon {
+      bottom: 17%;
+      right: 18.5%;
+      position: absolute;
+      width: 10px;
+      height: 100px;
+    }
+
+    .baloon {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: relative;
+    }
+
+    .number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10%;
+      height: 10%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+
+    @keyframes move_y {
+      from {
+        bottom: 15%;
+      }
+
+      to {
+        bottom: 78%;
+      }
+    }
+
+    @keyframes oscil1 {
+      from {
+        translate: 0 0;
+        transform: rotate(0deg);
+        animation-timing-function: cubic-bezier(0.1, 0.3, 0.3, 1);
+      }
+
+      25% {
+        translate: 10px 0;
+        transform: rotate(3deg);
+        animation-timing-function: cubic-bezier(0.7, 0.0, 0.9, 0.7);
+      }
+
+      50% {
+        translate: 0 0;
+        transform: rotate(0deg);
+        animation-timing-function: cubic-bezier(0.1, 0.3, 0.3, 1);
+      }
+
+      75% {
+        translate: -10px 0;
+        transform: rotate(-3deg);
+        animation-timing-function: cubic-bezier(0.7, 0.0, 0.9, 0.7);
+      }
+
+      to {
+        translate: 0 0;
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="sky.png" alt="sky" class="sky">
+  </div>
+  <div class="containerbody">
+    <img src="body.png" alt="sky" class="pumpbody">
+    <img src="top.png" alt="sky" class="pumptop">
+    <img src="side.png" alt="sky" class="pumpside">
+  </div>
+  <div id="containerbaloon">
+  </div>
+</body>
+<script src="vijay.js"></script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Angular" content="width=device-width, initial-scale=1.0">
+    <title>Angular</title>
+    <script type="text/javascript" src=""></script>
+</head>
+<body>
+    <canvas></canvas>
+
+    <div class="Score_Detail_Container">
+        <div class="score">
+            <img src="./src/Sprites/cracked_balloon.png" alt="..">
+            <h1 id="score-text">: 0</h1>
+        </div>
+        <div id="miss_Balloon">
+            <img src="./src/Sprites/balloon1.png" alt="...">
+            <img src="./src/Sprites/balloon1.png" alt="...">
+            <img src="./src/Sprites/balloon1.png" alt="...">
+            <img src="./src/Sprites/balloon1.png" alt="...">
+            <img src="./src/Sprites/balloon1.png" alt="...">
+        </div>
+    </div>
+
+    <div class="restart_Container">
+        <h1 id="res_score">Your Score Is 5</h1>
+        <div class="buttons">
+            <a href="./index.html" class="btn" id="home">Home</a>
+            <button onclick="restart_Game()" class="btn" id="restart">Restart</button>
+        </div>
+    </div>
+
+    <img src="./src/Sprites/distroyer.png" alt="distroyer" id="distroyer" style="display: none;">
+    <img src="./src/Sprites/balloon.png" alt="balloon" id="balloon" style="display: none;">
+
+    <script type="module" src="./src/js/Game.js"></script>
+</body>
+</html>
